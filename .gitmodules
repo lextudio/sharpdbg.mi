@@ -1,3 +1,6 @@
 [submodule "sharpdbg"]
 	path = sharpdbg
 	url = https://github.com/lextudio/sharpdbg.git
+[submodule "netcoredbg"]
+	path = netcoredbg
+	url = https://github.com/Samsung/netcoredbg.git

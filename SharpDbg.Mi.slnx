@@ -2,4 +2,14 @@
   <Folder Name="/src/">
     <Project Path="src/SharpDbg.MiWrapper/SharpDbg.MiWrapper.csproj" />
   </Folder>
+  <Folder Name="/test/">
+    <Project Path="test/TestApp/TestApp.csproj" />
+    <Project Path="test/TestApp1/TestApp1.csproj" />
+    <Project Path="test/TestApp2/TestApp2.csproj" />
+    <Project Path="test/TestAppExpression/TestAppExpression.csproj" />
+    <Project Path="test/TestAppStepping/TestAppStepping.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/SharpDbg.Mi.Tests/SharpDbg.Mi.Tests.csproj" />
+  </Folder>
 </Solution>

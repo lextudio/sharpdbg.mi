@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <UseMicrosoftTestingPlatformRunner>true</UseMicrosoftTestingPlatformRunner>
+    <!-- MiSession handles its own per-read timeouts; ct passed through is fine -->
+    <NoWarn>$(NoWarn);xUnit1051</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="xunit.runner.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="Xunit" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="xunit.v3.mtp-v2" Version="3.2.1" />
+    <PackageReference Include="xunit.abstractions" Version="2.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Ensure sharpdbg-mi wrapper is built before tests run -->
+    <ProjectReference Include="..\..\src\SharpDbg.MiWrapper\SharpDbg.MiWrapper.csproj" ReferenceOutputAssembly="false" />
+    <!-- Ensure sharpdbg CLI (the wrapped DAP server) is built -->
+    <ProjectReference Include="..\..\sharpdbg\src\SharpDbg.Cli\SharpDbg.Cli.csproj" ReferenceOutputAssembly="false" />
+    <!-- Standalone test fixture apps (netcoredbg's programs require their test harness,
+         so we maintain simple equivalents here; see PORTING.md for the mapping). -->
+    <ProjectReference Include="..\..\test\TestApp\TestApp.csproj" ReferenceOutputAssembly="false" />
+    <ProjectReference Include="..\..\test\TestApp1\TestApp1.csproj" ReferenceOutputAssembly="false" />
+    <ProjectReference Include="..\..\test\TestApp2\TestApp2.csproj" ReferenceOutputAssembly="false" />
+    <ProjectReference Include="..\..\test\TestAppExpression\TestAppExpression.csproj" ReferenceOutputAssembly="false" />
+    <ProjectReference Include="..\..\test\TestAppStepping\TestAppStepping.csproj" ReferenceOutputAssembly="false" />
+  </ItemGroup>
+
+</Project>
