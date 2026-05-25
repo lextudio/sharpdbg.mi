@@ -1,0 +1,5 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/SharpDbg.MiWrapper/SharpDbg.MiWrapper.csproj" />
+  </Folder>
+</Solution>
